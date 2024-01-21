@@ -1,22 +1,30 @@
 name = input("What is your name? ")
 print("Hello " + name + " :) wellcome to guessing game ")
-question = input("are you ready to play game (yes/no) ")
-if question.upper() == 'YES':
-  print("ok lets start " + name)
-elif question == "no" or question == "No" or question == "NO" or question == "nO":
-  print(name + " why you are not ready to play game :(" ) 
-question1 = input("what is the capital of France? ")
-if question1 == "Paris" or question1 == "paris" :
-  print("correct you got one point")
-else:
-  print("incorrect")
-question2 = input("what is the capital of Germany?")
-if question2 == "Berlin"or question2 == "berlin":
-  print("correct you got one point")
-else:
-  print("incorect")
-question3 = input("what is the capital of England?")
-if question3 == "London" or question3 == "london":
-  print("correct you got one point")
-else:
-  print("incorrect")
+
+def new_game():
+
+    #guesses = []
+    #correct_guesses = 0
+    question_num = 1
+
+    for key in questions:
+      print("-------------------------")
+      print(key)
+      for i in options[question_num-1]:
+        print(i)
+
+questions = {
+  "what is the capital of France? ": 'A', 
+  'what is the capital of Germany?': 'B',
+  'what is the capital of England?':'A',
+  'what is the capital of Italy' :'C',
+  'what is the capital of Spain?':'D',
+  'what is the value of 9*8  ? ' : 'A'}
+
+options = [['A. paris', 'B. berlin', 'C. London','D. Rome'],
+           ['A. Madrid', 'B. Berlin','C. Washington DC','D. Ankara'],
+           ['A. London','B. Berlin','C. Paris','D. Rome'],
+           ['A. Pekin','B. Viana','C. Rome','D. Ankara'],
+           ['A. Viana ','B. Berlin','C. Paris','D. Madrid'],
+           ['A. 72','B. 80','C. 90','D. 100']]
+new_game()
